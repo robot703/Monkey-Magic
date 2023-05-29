@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>장애물 피하기 게임</title>
+    <style>
+      /* 게임 컨테이너 스타일 */
+      #game-container {
+        position: relative;
+        display: inline-block;
+      }
+      
+      /* 게임 캔버스 스타일 */
+      #game-canvas {
+        border: 2px solid #000000;
+        display: block;
+        margin: 20px auto;
+      }
+
+      /* 타이머 스타일 */
+      .timer {
+        font-size: 40px;
+        text-align: center;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* 스코어보드 스타일 */
+      .scoreboard {
+        font-size: 40px;
+        text-align: right;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+
+      /* 게임 재시작 버튼 스타일 */
+      #restartButton {
+        display: none;
+        margin-top: 0px;
+        font-size: 35px;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+      }
+
+      /* 게임 재시작 버튼 스타일 (모바일 화면) */
+      @media only screen and (max-width: 600px) {
+        #restartButton {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="game-container">
+      <!-- 게임 캔버스 -->
+      <canvas id="game-canvas" width="1505" height="630"></canvas>
+      
+      <!-- 게임 재시작 버튼 -->
+      <button id="restartButton" onclick="restartGame()">Restart</button>
+      
+      <!-- 타이머 -->
+      <div class="timer">
+        <span class="minutes">00</span>:<span class="seconds">00</span>
+      </div>
+      
+      <!-- 스코어보드 -->
+      <div class="scoreboard">
+        score : <span class="score">0</span>
+      </div>
+    </div>
+
+    <!-- 게임 스크립트 -->
+    <script src="원숭이피하기 최종.js"></script>
+    
+    <!-- 배경음악 -->
+    <audio id="myAudio" controls>
+      <source src="몽키매직.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var audio = document.getElementById("myAudio");
+        audio.play();
+      });
+    </script>
+  </body>
+</html>
